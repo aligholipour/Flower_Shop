@@ -1,0 +1,41 @@
+﻿@model List<Flower_Shop.Models.Entities.Flower>
+
+@{
+    ViewData["Title"] = "FlowerList";
+}
+
+@{
+    var i = 1;
+}
+
+<div class="container">
+    <br /><h3>FlowerList</h3>
+
+    <a asp-action="Create" asp-controller="Flower" class="btn btn-success">Create new</a><br /><br />
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var flower in Model)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td>@flower.Name</td>
+                    <td>@flower.Price</td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@flower.FlowerId" class="btn btn-danger">Delete</a>
+                        <a asp-action="Edit" asp-route-id="@flower.FlowerId" class="btn btn-primary">Edit</a>
+                    </td>
+                </tr>
+                i++;
+            }
+        </tbody>
+    </table>
+</div>
+

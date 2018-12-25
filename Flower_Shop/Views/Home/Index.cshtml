@@ -1,0 +1,32 @@
+﻿@model List<Flower_Shop.Models.Entities.Flower>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section id="portfolio" class="section-bg">
+    <div class="container">
+
+        <div class="row portfolio-container" style="position: relative;">
+            @foreach (var flower in Model)
+            {
+                <div class="col-lg-3 col-md-6 portfolio-item filter-app wow fadeInUp">
+                    <div class="portfolio-wrap">
+                        <figure>
+                            <a href="/Flower/More/@flower.FlowerId">
+                                <img src="@flower.ImgPath" class="img-fluid" alt="@flower.Name">
+                            </a>
+                        </figure>
+
+                        <div class="portfolio-info">
+                            <h4><a href="#">@flower.Name</a></h4>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+
+    </div>
+</section>

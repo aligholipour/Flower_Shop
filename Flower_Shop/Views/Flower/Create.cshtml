@@ -1,0 +1,28 @@
+﻿@model Flower_Shop.Models.Entities.Flower
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <br />
+    <h3>Create</h3>
+
+    <form asp-action="Create" asp-controller="Flower">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Name</label>
+            <input asp-for="Name" type="text" class="form-control" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Price</label>
+            <input asp-for="Price" type="number" class="form-control" placeholder="Enter Price">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Image Path</label>
+            <input asp-for="ImgPath" type="text" class="form-control" placeholder="Enter Image Path">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create</button>
+        <button asp-action="FlowerList" type="submit" class="btn btn-danger">Cancel</button>
+    </form>
+</div>

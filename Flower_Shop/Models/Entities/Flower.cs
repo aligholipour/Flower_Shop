@@ -10,6 +10,7 @@ namespace Flower_Shop.Models.Entities
         public int FlowerId { get; set; }
         public string Name { get; set; }
         public int Price { get; set; }
+        public string ImgPath { get; set; }
         public DateTime Date => DateTime.Now;
     }
 }

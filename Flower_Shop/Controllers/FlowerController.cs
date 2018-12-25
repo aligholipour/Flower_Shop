@@ -59,7 +59,7 @@ namespace Flower_Shop.Controllers
         public IActionResult Delete(int id)
         {
             var find = _context.Flowers.Find(id);
-            _context.Flowers.Remove(find);
+            _context.Entry(find).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
             _context.SaveChanges();
             return RedirectToAction("FlowerList");
         }

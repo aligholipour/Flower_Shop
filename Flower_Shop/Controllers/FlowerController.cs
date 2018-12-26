@@ -42,7 +42,7 @@ namespace Flower_Shop.Controllers
             return View(find);
         }
 
-        [HttpOptions]
+        [HttpPost]
         public IActionResult Edit(Flower flower)
         {
             if (!ModelState.IsValid)
@@ -62,6 +62,12 @@ namespace Flower_Shop.Controllers
             _context.Entry(find).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
             _context.SaveChanges();
             return RedirectToAction("FlowerList");
+        }
+
+        public IActionResult More(int id)
+        {
+            var get = _context.Flowers.Find(id);
+            return View(get);
         }
 
     }

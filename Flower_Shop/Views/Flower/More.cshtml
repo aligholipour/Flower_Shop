@@ -1,0 +1,36 @@
+﻿@model Flower_Shop.Models.Entities.Flower
+
+@{
+    ViewData["Title"] = "More";
+}
+
+<section id="portfolio" class="section-bg">
+    <div class="container">
+
+        <div class="row portfolio-container" style="position: relative;">
+
+            <div class="col-lg-3 col-md-6 portfolio-item filter-app wow fadeInUp">
+                <div class="portfolio-wrap">
+                    <figure>
+                        <a href="/Flower/More/@Model.FlowerId">
+                            <img src="@Model.ImgPath" class="img-fluid" alt="@Model.Name">
+                        </a>
+                    </figure>
+
+                    <div class="portfolio-info">
+                        <h4><a href="#">@Model.Name</a></h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9 col-md-6 box wow bounceInUp" data-wow-duration="1.4s" style="visibility: visible; animation-duration: 1.4s; animation-name: bounceInUp;">
+                <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
+                <h4 class="title"><a href="#">Flower Name : @Model.Name</a></h4>
+                <h4 class="title">Price : @Model.Price</h4>
+                <a href="/Order/OrderInfo/@Model.FlowerId" class="btn btn-primary">Order</a>
+            </div>
+
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,58 @@
+﻿@model Flower_Shop.Models.Entities.Order
+
+@{
+    ViewData["Title"] = "OrderInfo";
+}
+
+<section id="portfolio" class="section-bg">
+    <div class="container">
+
+        <div class="row portfolio-container" style="position: relative;">
+
+            <div class="col-lg-3 col-md-6 portfolio-item filter-app wow fadeInUp">
+                <div class="portfolio-wrap">
+                    <figure>
+                        <a href="/Flower/More/@Model.OrderId">
+                            <img src="@ViewBag.image" class="img-fluid">
+                        </a>
+                    </figure>
+
+                    <div class="portfolio-info">
+                        <h4><a href="#">@ViewBag.name</a></h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9 col-md-6 box wow bounceInUp" data-wow-duration="1.4s" style="visibility: visible; animation-duration: 1.4s; animation-name: bounceInUp;">
+                <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
+                <h4 class="title"><a href="#">Flower Name : @ViewBag.name</a></h4>
+            
+                <form asp-controller="Order" asp-action="Pay" method="post">
+                    <input type="hidden" asp-for="@Model.OrderId" />
+                    <input type="hidden" asp-for="@Model.Price" />
+
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <input asp-for="FullName" type="text" class="form-control" placeholder="Enter FullName">
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Address" type="text" class="form-control" placeholder="Enter Address">
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="PostalCode" type="text" class="form-control" placeholder="Enter PostalCode">
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="PhoneNumber" type="text" class="form-control" placeholder="Enter PhoneNumber">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Pay</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>

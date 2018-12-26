@@ -15,5 +15,6 @@ namespace Flower_Shop.Models.Context
         }
 
         public DbSet<Flower> Flowers { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }

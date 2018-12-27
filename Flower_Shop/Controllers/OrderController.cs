@@ -50,5 +50,13 @@ namespace Flower_Shop.Controllers
 
             return View("OrderInfo", order);
         }
+
+        public IActionResult Delete(int id)
+        {
+            var delete = _Context.Orders.Find(id);
+            _Context.Entry(delete).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
+            _Context.SaveChanges();
+            return RedirectToAction("OrderList");
+        }
     }
 }

@@ -19,6 +19,9 @@
                 <th>#</th>
                 <th>Name</th>
                 <th>Price</th>
+                <th>Height</th>
+                <th>Type</th>
+                <th>Color</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +31,9 @@
                     <td>@i</td>
                     <td>@flower.Name</td>
                     <td>@flower.Price</td>
+                    <td>@flower.Height</td>
+                    <td>@flower.Type</td>
+                    <td>@flower.Color</td>
                     <td>
                         <a asp-action="Delete" asp-route-id="@flower.FlowerId" class="btn btn-danger">Delete</a>
                         <a asp-action="Edit" asp-route-id="@flower.FlowerId" class="btn btn-primary">Edit</a>
